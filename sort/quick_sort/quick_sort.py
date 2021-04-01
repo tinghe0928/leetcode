@@ -15,7 +15,7 @@ class Solution(object):
     def quick_sort(self, lists, i, j):
         """本质感觉是双指针+两数/三数交换"""
         if i >= j:
-            return list
+            return lists
         key = lists[i]
         low = i
         high = j
