@@ -1,4 +1,19 @@
 From https://www.zhihu.com/search?q=leetcode%E6%80%8E%E4%B9%88%E5%88%B7&utm_content=search_suggestion&type=content
+0. Pattern:Sort&Search，基础算法
+经典题目：
+冒泡排序
+选择排序
+插入排序
+希尔排序
+归并排序
+快速排序
+堆排序
+计数排序
+桶排序
+基数排序
+二分查找
+分块查找/索引查找
+哈希查找
 
 1. Pattern: Sliding window，滑动窗口类型
 经典题目：
