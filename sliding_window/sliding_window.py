@@ -6,6 +6,8 @@ class Solution:
     """
     给定一个整数数组和一个整数 k，找到该数组中和为k的连续的子数组的个数
     本质是找出sum[i,j]= sum[:i] - sum[:j]=k ===> sum[:j] = sum [:i] - k 满足这样的条件的组合有多少个
+
+    另外还有一个暴力解法，循环序列种的每一个元素，计算这个元素的每一个子序列的和&与k做比较
     """
     @staticmethod
     def subarraySum(nums, k):
