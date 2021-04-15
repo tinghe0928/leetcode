@@ -1,10 +1,26 @@
 class Solution:
 
+    def heapSort(nums):
+        n = len(nums)
+
+
+        # Build a maxheap.
+        # 构建大顶堆需要有三个元素，序列，序列的长度，序列元素的index
+        # 构建大顶堆需要从上往下构建，但是调整大顶堆可以从下往上调整
+        for i in range(n//2 -1, -1, -1):  # 根据二叉树/完全二叉树的特性，含有叶子节点的最大的元素是 len//2 -1,所以构建大顶堆，是从 i -- > 0 构建的
+            Solution.heapify(nums, n, i)
+
+            # 一个个交换元素
+        for i in range(n - 1, 0, -1):
+            nums[i], nums[0] = nums[0], nums[i]  # 交换
+            Solution.heapify(nums, i, 0)   # 调整剩下的序列为大顶堆
+
     @staticmethod
     def heapify(arr, n, i):
         largest = i
         l = 2 * i + 1  # left = 2*i + 1
-        r = 2 * i + 2  # right = 2*i + 2
+        r = 2 * i + 2  # right = 2*i
+        # + 2
 
         if l < n and arr[i] < arr[l]:
             largest = l
@@ -14,23 +30,7 @@ class Solution:
 
         if largest != i:
             arr[i], arr[largest] = arr[largest], arr[i]  # 交换
-
             Solution.heapify(arr, n, largest)
-
-    def heapSort(nums):
-        n = len(nums)
-
-
-        # Build a maxheap.
-        # 构建大顶堆需要有三个元素，序列，序列的长度，序列元素的index
-        # 构建大顶堆需要从上往下构建，但是调整大顶堆可以从下往上调整
-        for i in range(n//2 -1, -1, -1):
-            Solution.heapify(nums, n, i)
-
-            # 一个个交换元素
-        for i in range(n - 1, 0, -1):
-            nums[i], nums[0] = nums[0], nums[i]  # 交换
-            Solution.heapify(nums, i, 0)   # 调整剩下的序列为大顶堆
 
 """
 1. 对于一个长为n的序列，首先用将长为n的序列构建成大顶堆，即函数heapify(nums, n, i) i从倒数第一个非叶子节点（len//2 -1）开始构建即可

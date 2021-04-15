@@ -35,9 +35,9 @@ class Solution:
 
 
 if __name__ == "__main__":
-    lists = [8, 9, 10, 8, 9, 10]
-    key = 99
-    result = Solution.hash_search(lists, key)
+    lists = [8, 9, 10]
+    key = 8
+    result = Solution.hash_search(lists, key)  # 这个方法只能判断序列中有没有当前值，不能判断在第几位
     if result == -1:
         print("Ops，没有找到此值")
     else:

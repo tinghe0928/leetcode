@@ -12,8 +12,8 @@ class Solution(object):
         """
         return self.quick_sort(nums, 0, len(nums)-1)
 
-    def quick_sort(self, lists, i, j):
-        """本质感觉是双指针+两数/三数交换"""
+    def quick_sort_bp(self, lists, i, j):
+        """本质感觉是双指针+三数交换"""
         if i >= j:
             return lists
         key = lists[i]
@@ -27,6 +27,24 @@ class Solution(object):
                 i += 1
             lists[j] = lists[i]
         lists[i] = key  # 将基准值放到左右值（也就是最后i与j相遇的位置）中间
+        self.quick_sort(lists, low, i-1)
+        self.quick_sort(lists, i+1, high)
+        return lists
+
+    def quick_sort(self, lists, i, j):
+        """本质感觉是双指针+两数交换"""
+        if i >= j:
+            return lists
+        key = lists[i]
+        low = i
+        high = j
+        while i < j:
+            while i < j and lists[j] >= key:  # 往左循环，直到找到第一个小于基准值的j,将此值移到左边
+                j -= 1
+            lists[i],lists[j] = lists[j],lists[i]
+            while i < j and lists[i] <= key:  # 往右循环，直到找到第一个大于基准值的i，将此值移到右边
+                i += 1
+            lists[j],lists[i] = lists[i],lists[j]
         self.quick_sort(lists, low, i-1)
         self.quick_sort(lists, i+1, high)
         return lists
