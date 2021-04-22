@@ -14,6 +14,8 @@ class Solution:
             hashtable[pre_sum] = hashtable.get(pre_sum, 0) + 1
             ret = ret + hashtable.get(pre_sum - k, 0)  # presum[:i] - presum[:j] == k <=> presum[i] - k = presum[j]
         print(hashtable)
+        
+        
         return ret
 
 
