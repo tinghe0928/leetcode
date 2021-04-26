@@ -9,17 +9,16 @@ class Solution:
             if start == end:
                 print(arr)
                 mylist.append(arr)
-            if start != end:
-                for i in range(start, end):
-                    arr[i], arr[start] = arr[start], arr[i]
-                    permutations(arr, start + 1, end)
-                    arr[i], arr[start] = arr[start], arr[i]
+            for i in range(start, end):
+                arr[i], arr[start] = arr[start], arr[i]
+                permutations(arr, start + 1, end)
+                arr[i], arr[start] = arr[start], arr[i]
 
         permutations(nums, 0, len(nums))
         return mylist
 
 mylist =[]
-arr = ["a", "b", "c"]
+arr = ["a", "a", "c"]
 arr[0],arr[1] = arr[1],arr[0]
 mylist.append(arr[:])
 print(mylist)

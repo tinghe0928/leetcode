@@ -22,9 +22,9 @@ class Solution:
         y = abs(x)
         res = 0
         if x > 0:
-            boundry = pow(2,31) - 1
+            boundry = pow(2, 31) - 1
         else:
-            boundry = pow(2,31)
+            boundry = pow(2, 31)
         while y != 0:
             res = res * 10 + y % 10
             if res > boundry:

@@ -8,4 +8,3 @@ class Solution:
             slist[left], slist[right] = slist[right], slist[left]
             left += 1
             right = n - 1 - left
-        
