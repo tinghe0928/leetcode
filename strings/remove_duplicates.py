@@ -16,7 +16,9 @@ class Solution:
                 if j - i == 1:
                     i += 1
                 else:
-                    slist = slist[0:-1]
+                    print(slist)
+                    slist = slist[0:-1] #这个是什么意思？去掉当前slist的最后以为
+                    print(slist)
                     i = j
             s = ''.join(slist)
             n1 = len(s)
@@ -26,8 +28,6 @@ class Solution:
             return Solution().removeDuplicates(s)
 
 
+s = "abbaca"#'adfjkahfjahfuierdsdd'
 
-
-
-s = 'adfjkahfjahfuierdsdd'
 print(Solution().removeDuplicates(s))

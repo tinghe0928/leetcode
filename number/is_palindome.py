@@ -5,7 +5,7 @@ class Solution:
         s = str(x)
         n = len(s)
         mid = n // 2
-        result = True
+        result = bool()
         left = mid - 1
         if n % 2 == 1:
             right = mid + 1
@@ -17,7 +17,7 @@ class Solution:
             right += 1
         if left == -1 and right == n:
             return result
-        return False
+        return result
 
 
 x= 1000021

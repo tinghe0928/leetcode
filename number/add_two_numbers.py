@@ -11,6 +11,7 @@ class Solution:
             n = n*10+y[i]
         print(m,n)
         num = m+n
+
         for i in str(num):
             result.append(int(i))
         return result

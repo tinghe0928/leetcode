@@ -18,5 +18,16 @@ class Solution:
         return maxprofit
 
 
-prices=[6,2,8,10,1]
-print(Solution.maxProfit(prices))
+
+
+def solution(mylist):
+    min_num = mylist[0]
+    result = 0
+    for i in mylist:
+        min_num = min(min_num, i)
+        result = max(result, i - min_num)
+    return result
+
+
+mylist=[6,2,8,10,1]
+print(solution(mylist))
