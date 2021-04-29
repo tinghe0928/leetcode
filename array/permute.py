@@ -2,7 +2,7 @@ class Solution:
 
     @staticmethod
     def permute(nums):
-
+        "全排列"
         mylist = []
 
         def permutations(arr, start, end):

@@ -1,5 +1,6 @@
 class Solution:
     def permutation(self, s):
+        "全排列"
         if len(s) <= 1:
             return list(s)
         result = []

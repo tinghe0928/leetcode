@@ -6,7 +6,7 @@ class Solution:
             "当前元素大于后续步长的时候，直接返回列表末尾"
             if start+nums[start] >= n-1:
                 return n-1
-            "max_sum下一步列表中最大的数"
+            "max_sum下一步列表中最大的数,先赋予一个初始值"
             max_step = start+1
             max_step_value = nums[start+1]
             max_sum = max_step + max_step_value

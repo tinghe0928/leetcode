@@ -31,7 +31,33 @@ class Solution:
                     result = even_str
         return result
 
+# class Solution:
+#     @staticmethod
+#     def longestPalindrome(s):
+#         n = len(s)
+#         if n <= 1:
+#             return s
+#         def find_palindrome(mystring,l,r):
+#             tmp = []
+#             while 0<=l and r < len(mystring) and mystring[l] == mystring[r]:
+#                 l -= 1
+#                 r += 1
+#             tmp = mystring[l+1:r]
+#             return tmp
+#         max_palindrome = s[0]
+#         for i in range(len(s)):
+#             palindrome_odd = find_palindrome(s,i,i)
+#             palindrome_even = find_palindrome(s,i,i+1)
+#             # print('palindrome_odd, palindrome_even', palindrome_odd,'*', palindrome_even)
+#             if len(palindrome_odd) >= len(palindrome_even):
+#                 max_tmp = palindrome_odd
+#             else:
+#                 max_tmp = palindrome_even
+#             if len(max_tmp) >= len(max_palindrome):
+#                 max_palindrome = max_tmp
+#         return max_palindrome
+
 
 if __name__ == "__main__":
-    x = "123321"
+    x = "12332b"
     print(Solution.longestPalindrome(x))

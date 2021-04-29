@@ -21,7 +21,6 @@ class ThreeSum:
             i = 0
             for i in range(my_len-1):
                 if my_list[i] > my_sum:  # 当数组中最小的值比所求的和大，直接退出程序，返回空结果列表
-                    
                     print("当前数组中最小的值已经比所求的和大，直接退出程序")
                     return all_items
                 if i > 0 and my_list[i] == my_list[i-1]:  # 对于重复元素：跳过，跳出当前循环，避免出现重复解
