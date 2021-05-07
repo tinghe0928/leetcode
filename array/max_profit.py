@@ -17,6 +17,14 @@ class Solution:
             maxprofit = max(maxprofit, price - minprice)
         return maxprofit
 
+    def maxProfit_1(self,nums):
+        "这个贪心法解释不错：https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/solution/best-time-to-buy-and-sell-stock-ii-zhuan-hua-fa-ji/"
+        result = 0
+        n = len(nums)
+        for i in range(n):
+            result += max(result, nums[i]-nums[i-1])
+        return result
+
 
 
 
