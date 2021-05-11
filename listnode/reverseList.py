@@ -58,26 +58,50 @@ def get_ele(head, i):
 
 def insert_ele(head, value, i):
     nodelist = ListNode(value)
+    pre = head #一定要先将head赋值出去，head会移动
     if i < 0:
         nodelist.next = head
         return nodelist
     elif i >= get_len(head):
         pass
     else:
-        pre = head  #一定要先将head赋值出去，head会移动
-        for j in range(i-1):
+        for j in range(1,i):
             head = head.next
         nodelist.next = head.next
         head.next = nodelist
     return pre
 
 
-head = insert_ele(head, 5, 2)
-while head:
-    print(head.value)
-    head = head.next
+def del_ele(head, i):
+    pre = head
+    if i < 0 or i >= get_len(head):
+        return head
+    if i == 0:
+        pre.next = head.next
+        return pre
+    print(pre.value)
+    for i in range(1,i):
+        head = head.next
+    head.next = head.next.next
+    return pre
 
 
 
+
+
+
+
+
+
+inserthead = insert_ele(head, 5, 2)
+while inserthead:
+    print(inserthead.value)
+    inserthead = inserthead.next
+
+delhead = del_ele(head, 0)
+while delhead:
+    print("del")
+    print(delhead.value)
+    delhead = delhead.next
 
 
