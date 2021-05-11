@@ -32,17 +32,52 @@ node3 = ListNode(3)
 node1.next = node2
 node2.next = node3
 head = node1
-print(Solution().reverseList(head))
+head = Solution().reverseList(head)
+
 
 def get_len(head):
     l = 0
-
     while head:
-        print(head.value)
         l += 1
         head = head.next
-    print("this is the lenth of nodelist: ",l)
-get_len(head)
+    return l
+
+
+def get_ele(head, i):
+    l = get_len(head)
+    if i < 0 or i >= l:
+        return -1
+    j = 0
+    while head:
+        if j == i:
+            return head.value
+        head = head.next
+        j += 1
+    return j
+
+
+def insert_ele(head, value, i):
+    nodelist = ListNode(value)
+    if i < 0:
+        nodelist.next = head
+        return nodelist
+    elif i >= get_len(head):
+        pass
+    else:
+        pre = head  #一定要先将head赋值出去，head会移动
+        for j in range(i-1):
+            head = head.next
+        nodelist.next = head.next
+        head.next = nodelist
+    return pre
+
+
+head = insert_ele(head, 5, 2)
+while head:
+    print(head.value)
+    head = head.next
+
+
 
 
 
