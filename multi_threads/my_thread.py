@@ -10,7 +10,7 @@ def print_time( threadName, delay):
         print ("%s: %s" % ( threadName, time.ctime(time.time()) ))
 
 
-_thread.start_new_thread( print_time, ("Thread-1", 5, ) )
-_thread.start_new_thread( print_time, ("Thread-2", 5, ) )
+_thread.start_new_thread( print_time, ("Thread-1", 500, ) )
+_thread.start_new_thread( print_time, ("Thread-2", 500, ) )
 
 time.sleep(1000)
