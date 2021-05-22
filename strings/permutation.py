@@ -11,4 +11,20 @@ class Solution:
         return result
 
 
+    def permute(self, nums):
+        n = len(nums)
+        result = []
+        if n == 1:
+            result.append(nums)
+        for i in range(n):
+            if nums[i] not in nums[:i] :
+                for j in self.permute(nums[0:i]+nums[i+1:]):
+                    result.append([nums[i]]+j)
+        return result
+
+# s = "aabc"
+# print(Solution().permutation(s))
+n = [1,1,1,3]
+print(Solution().permute(n))
+
 
